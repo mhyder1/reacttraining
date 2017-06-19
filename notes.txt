@@ -1,0 +1,69 @@
+React Features:
+	Composition: isolated components bundled with lost of functionality i.e. <Slider />
+	Unidirectional Dataflow
+	Declarative: declarative = what to do(abstraction used), imperative = how to do something(each step spelled out)
+	Explicit Mutations
+	Just JavaScript
+
+React used to manage state in application. As state changes; UI changes
+React used components: mini applications that can be combined(composed) to create larger applications
+Complexity can be encapsulated into a components, then the component can be composed into an application
+
+Declarative code:
+	Reduces side effects
+	Minimizes Mutability
+	More readable code
+	Less bugs
+
+Parts of React (in this course):
+	React
+	React Router: map specific url to component
+		<Router>
+			<li><Link to="/">Home</Link></li>
+		
+			<Route exact path="./" component={Home}/>
+		</Router
+	Webpack: module bundler, bundles multiple files in to a single file
+	Babel: transpiler. Converts es6 into es5
+	Axios: HTTP requests
+
+------------------- WEBPACK -------------------------
+Webpack needs to know:
+	1. starting point of your app (root js file). entry: 'path to root file'
+	2. which transformations to make. loaders, module object with rules array
+	   loaders are composed of 2 things. File type and loader name
+	3. where to save transformed code. output
+
+webpack.config.js = file to hold webpack config (located at root of project)
+
+module.exports = {
+	entry:[
+		'./app/.index.js'
+	],
+	module: {
+		rules:[{test:/\.coffee$/, use:'coffee-loader}]
+	},
+	output: {
+		path.path.resolve(__dirname, 'dist'),
+		filename: 'index_bundle.js'
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: 'app/index.html'
+		})
+	]
+}
+
+Run webpack with an npm script:
+	"scripts": {
+		"build": "webpack -w",
+		"prod": "webpack -p"
+	}
+
+
+
+1. npm init
+2. install react & react-dom (react-dom glue between react and dom)
+3. npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react
+(npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader html-webpack-plugin webpack webpack-dev-server)
+
