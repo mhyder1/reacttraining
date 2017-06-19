@@ -20,7 +20,7 @@ Parts of React (in this course):
 	React Router: map specific url to component
 		<Router>
 			<li><Link to="/">Home</Link></li>
-		
+
 			<Route exact path="./" component={Home}/>
 		</Router
 	Webpack: module bundler, bundles multiple files in to a single file
@@ -67,3 +67,6 @@ Run webpack with an npm script:
 3. npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react
 (npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader html-webpack-plugin webpack webpack-dev-server)
 
+JSX looks like html but compiles to javascript
+
+A component is concerned with 3 things: state, lifecyle events and UI
